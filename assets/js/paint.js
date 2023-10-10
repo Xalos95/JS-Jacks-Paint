@@ -3,17 +3,26 @@ function configureListeners() {
 
 
      for (var i = 0; i < images.length; i++) {        
-        // iterate over images and add mouseover event listeners      
+        // iterate over images and add mouseover event listeners  
+        document.getElementById(images[i].addEventListener('mouseover',addOpacity,false))
+        document.getElementById(images[i].addEventListener('mouseout',removeOpacity,false))    
     } 
 }
 
 function addOpacity(event) {
     // add appropriate CSS class
+    if(this.classList.contains('dim'))
+    {
+       this.classList.remove('dim');
+    }
     getProductInfo(event.target.id);     
 }
 
 function removeOpacity(event) {
-     //remove appropriate CSS class
+     if(this.classList.contains('dim'))
+     {
+        this.classList.remove('dim');
+     }
 
     let element = document.getElementById('color-price');
         element.textContent = '';
