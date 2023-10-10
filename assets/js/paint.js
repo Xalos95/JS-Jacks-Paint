@@ -1,5 +1,5 @@
 function configureListeners() {
-    let images = // select img elements  
+    let images = document.getElementsByTagName('img') 
 
 
      for (var i = 0; i < images.length; i++) {        
@@ -32,50 +32,58 @@ function getProductInfo(paintColor) {
         case 'pn1':           
             price = '$14.99';
             colorName = 'Lime Green' 
-            updatePrice(price, color); 
+            updatePrice(price, colorName); 
             break;           
         case 'pn2':
             price = '$11.14';
-            colorName = 'Medium Brown';    
+            colorName = 'Medium Brown';   
+            updatePrice(price, colorName); 
             break;            
         case 'pn3':
             price = '$22.99';
             colorName = 'Royal Blue'; 
+            updatePrice(price, colorName);
             break;   
         case 'pn4':
             price = '$13.42';
             colorName = 'Solid Red'; 
+            updatePrice(price, colorName);
             break;   
         case 'pn5':
             price = '$21.98';
-            colorName = 'Solid White';      
+            colorName = 'Solid White';    
+            updatePrice(price, colorName);  
             break;   
         case 'pn6':
             price = '$4.99';
-            colorName = 'Solid Black';       
+            colorName = 'Solid Black';    
+            updatePrice(price, colorName);   
             break;   
         case 'pn7':
             price = '$8.22';
             colorName = 'Solid Cyan'; 
+            updatePrice(price, colorName);
             break;   
         case 'pn8':
             price = '$11.99';
             colorName = 'Solid Purple'  
+            updatePrice(price, colorName);
             break;   
         case 'pn9':
             price = '$14.99';
             colorName = 'Solid Yellow';  
+            updatePrice(price, colorName);
             break;   
           default:              
     }
 
     function updatePrice(colorName, price)
     {       
-        let colorPrice = 
-        // display price
+        let colorPrice = document.getElementById('color-price')
+        colorPrice.textContent = price;
         
-        let color = // select element with corresponding id
-        //display color name
+        let color = document.getElementById('color-name')
+        color.textContent = colorName; 
     }
     
 }
