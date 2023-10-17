@@ -1,16 +1,16 @@
 function configureListeners() {
     var images = document.getElementsByTagName('img') 
 
-
+    // a loop that adds opacity depending on the images length
      for (var i = 0; i < images.length; i++) {        
-        // iterate over images and add mouseover event listeners  
+        // iterate over images and add mouseover event listeners  to make them dim in opacity
         document.getElementById(images[i].id).addEventListener('mouseover',addOpacity,false)
         document.getElementById(images[i].id).addEventListener('mouseout',removeOpacity,false)    
     } 
 }
 
 function addOpacity(event) {
-    // add appropriate CSS class
+    // add appropriate CSS class to dim the colors tabs
     if(!this.classList.contains('dim'))
     {
        this.classList.add('dim');
@@ -18,12 +18,14 @@ function addOpacity(event) {
     getProductInfo(event.target.id);     
 }
 
+//this function initiates the apperance of the color price and name as the event of moving the mouse over the paints options
 function removeOpacity(event) {
      if(this.classList.contains('dim'))
      {
         this.classList.remove('dim');
      }
 
+     //these fetch the correct price and name from the getProductInfo function
     let element = document.getElementById('color-price');
         element.textContent = '';
         
@@ -33,6 +35,7 @@ function removeOpacity(event) {
     event.preventDefault();    
 }
 
+//when this fuction is called it returns the correct price and color depending on where the mouse is hovering 
 function getProductInfo(paintColor) {
     let price;
     let colorName;  
@@ -85,7 +88,7 @@ function getProductInfo(paintColor) {
             break;   
           default:              
     }
-
+    //
     function updatePrice(colorName, price)
     {       
         let colorPrice = document.getElementById('color-price')
